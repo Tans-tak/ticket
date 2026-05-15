@@ -255,7 +255,7 @@ button:hover{
 
 /* =========================
    手机竖屏适配
-   2374 × 1080
+   整体等比例缩放
 ========================= */
 
 @media screen and (orientation:portrait){
@@ -264,21 +264,53 @@ button:hover{
 
         padding:0;
 
+        margin:0;
+
+        display:flex;
+
+        justify-content:center;
+
         align-items:flex-start;
 
         background:#000;
+
+        overflow-x:hidden;
     }
 
     .wrapper{
 
         width:100vw;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
     }
 
     .ticket{
 
         width:100vw;
 
-        height:auto;
+        max-width:100vw;
+
+        aspect-ratio:1920 / 724;
+
+        position:relative;
+    }
+
+    /* =========================
+       核心：
+       所有文字跟随票根整体缩放
+    ========================= */
+
+    .actor,
+    .time,
+    .hall,
+    .seat,
+    .order{
+
+        transform-origin:top left;
     }
 
     /* =========================
@@ -287,12 +319,10 @@ button:hover{
 
     .actor{
 
-        left:38px;
-        top:38px;
+        left:6.25vw;
+        top:6.25vw;
 
-        font-size:22px;
-
-        letter-spacing:1px;
+        font-size:2.8vw;
     }
 
     /* =========================
@@ -301,12 +331,10 @@ button:hover{
 
     .time{
 
-        left:38px;
-        top:95px;
+        left:6.25vw;
+        top:15.3vw;
 
-        font-size:12px;
-
-        line-height:1.7;
+        font-size:1.45vw;
     }
 
     /* =========================
@@ -315,28 +343,24 @@ button:hover{
 
     .hall{
 
-        left:38px;
-        bottom:28px;
+        left:6.25vw;
+        bottom:4.4vw;
 
-        font-size:14px;
+        font-size:1.7vw;
     }
 
     /* =========================
-       座位号
+       座位
     ========================= */
 
     .seat{
 
-        right:34px;
-        top:118px;
+        right:5.5vw;
+        top:21.8vw;
+
+        font-size:3vw;
 
         transform:none;
-
-        font-size:24px;
-
-        line-height:1.45;
-
-        letter-spacing:1px;
     }
 
     /* =========================
@@ -345,10 +369,10 @@ button:hover{
 
     .order{
 
-        left:38px;
-        bottom:8px;
+        left:6.25vw;
+        bottom:2.8vw;
 
-        font-size:10px;
+        font-size:1.15vw;
     }
 
     /* =========================
@@ -361,11 +385,7 @@ button:hover{
 
         margin-top:18px;
 
-        margin-bottom:20px;
-
-        font-size:15px;
-
-        padding:14px;
+        margin-bottom:24px;
     }
 }
 
