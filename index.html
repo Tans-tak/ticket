@@ -253,51 +253,152 @@ button:hover{
     font-weight:400;
 }
 
+
 /* =========================
-   手机竖屏最终稳定版
-   只做：居中 + 缩放
-   不改任何坐标！！！
+   手机竖屏适配（固定像素版）
 ========================= */
 
 @media screen and (orientation:portrait){
 
     body{
-        padding:0;
+
         margin:0;
+
+        padding:0;
+
         min-height:100vh;
+
         display:flex;
+
         justify-content:center;
+
         align-items:center;
+
         background:#000;
+
         overflow:hidden;
     }
+
+    /* =========================
+       页面整体居中
+    ========================= */
 
     .wrapper{
+
         width:100vw;
+
         min-height:100vh;
+
         display:flex;
+
         flex-direction:column;
+
         justify-content:center;
+
         align-items:center;
     }
 
+    /* =========================
+       票根
+    ========================= */
+
     .ticket{
+
         width:100vw;
-        max-width:100vw;
+
         aspect-ratio:1920 / 724;
+
         position:relative;
+
         overflow:hidden;
     }
 
-    button{
-        width:92vw;
-        max-width:600px;
-        margin-top:20px;
-        margin-bottom:30px;
+    /* =========================
+       标题
+    ========================= */
+
+    .actor{
+
+        top:68px;
+        left:68px;
+
+        font-size:30px;
+    }
+
+    /* =========================
+       时间
+    ========================= */
+
+    .time{
+
+        top:165px;
+        left:68px;
+
         font-size:15px;
+
+        line-height:1.7;
+    }
+
+    /* =========================
+       放映厅
+    ========================= */
+
+    .hall{
+
+        top:232px;
+        left:68px;
+
+        font-size:17px;
+    }
+
+    /* =========================
+       座位号
+    ========================= */
+
+    .seat{
+
+        top:238px;
+        right:60px;
+
+        transform:none;
+
+        font-size:28px;
+
+        line-height:1.4;
+    }
+
+    /* =========================
+       票号
+    ========================= */
+
+    .order{
+
+        top:285px;
+        left:68px;
+
+        font-size:11px;
+    }
+
+    /* =========================
+       按钮
+    ========================= */
+
+    button{
+
+        width:92vw;
+
+        max-width:500px;
+
+        margin-top:20px;
+
+        margin-bottom:24px;
+
+        font-size:15px;
+
         padding:14px;
     }
 }
+
 
 </style>
 </head>
