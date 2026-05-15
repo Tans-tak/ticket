@@ -253,134 +253,51 @@ button:hover{
     font-weight:400;
 }
 
-
 /* =========================
-   手机竖屏适配
+   手机竖屏最终稳定版
+   只做：居中 + 缩放
+   不改任何坐标！！！
 ========================= */
 
 @media screen and (orientation:portrait){
 
     body{
-
         padding:0;
-
         margin:0;
-
         min-height:100vh;
-
         display:flex;
-
         justify-content:center;
-
         align-items:center;
-
         background:#000;
-
-        overflow-x:hidden;
-    }
-
-    /* =========================
-       页面整体居中
-    ========================= */
-
-    .wrapper{
-
-        width:100vw;
-
-        min-height:100vh;
-
-        display:flex;
-
-        flex-direction:column;
-
-        justify-content:center;
-
-        align-items:center;
-    }
-
-    /* =========================
-       票根整体缩放
-    ========================= */
-
-    .ticket{
-
-        width:100vw;
-
-        max-width:100vw;
-
-        aspect-ratio:1920 / 724;
-
-        position:relative;
-
         overflow:hidden;
     }
 
-    /* =========================
-       按钮宽度
-    ========================= */
+    .wrapper{
+        width:100vw;
+        min-height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .ticket{
+        width:100vw;
+        max-width:100vw;
+        aspect-ratio:1920 / 724;
+        position:relative;
+        overflow:hidden;
+    }
 
     button{
-
         width:92vw;
-
         max-width:600px;
-
         margin-top:20px;
-
         margin-bottom:30px;
-
         font-size:15px;
-
         padding:14px;
     }
-
-    /* =========================
-       文字按比例缩放
-    ========================= */
-
-    .actor{
-
-        left:6.25vw;
-        top:6.25vw;
-
-        font-size:2.8vw;
-    }
-
-    .time{
-
-        left:6.25vw;
-        top:15.3vw;
-
-        font-size:1.45vw;
-    }
-
-    .hall{
-
-        left:6.25vw;
-        top:22.5vw;
-
-        font-size:1.6vw;
-    }
-
-    .seat{
-
-        right:5.5vw;
-        top:22.8vw;
-
-        font-size:3vw;
-
-        transform:none;
-    }
-
-    .order{
-
-        left:6.25vw;
-        top:24.5vw;
-
-        font-size:1.15vw;
-    }
 }
-
 
 </style>
 </head>
