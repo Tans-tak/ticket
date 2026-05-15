@@ -6,21 +6,22 @@
 
 <title>电影票根</title>
 
-<!-- 思源黑体 Regular -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================
-   香萃潮汐宋体
-   请放入同目录：
-   XiangCuiSong.ttf
+   自定义字体
 ========================= */
 
 @font-face{
     font-family:"XiangCuiSong";
     src:url("香萃潮汐宋 W15.ttf");
 }
+
+/* =========================
+   基础
+========================= */
 
 *{
     margin:0;
@@ -30,54 +31,42 @@
 
 body{
     background:#111;
-
     min-height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     padding:20px;
-
-    font-family:
-    "Noto Sans SC",
-    sans-serif;
+    font-family:"Noto Sans SC",sans-serif;
 }
 
 /* =========================
-   票根容器
+   容器
 ========================= */
 
 .wrapper{
-    width:min(95vw, 1400px);
+    width:min(95vw, 1600px);
 }
+
+/* =========================
+   票根（2160×815）
+========================= */
 
 .ticket{
     position:relative;
-
     width:100%;
-
-    aspect-ratio:1920/724;
-
+    aspect-ratio:2160 / 815;
     overflow:hidden;
-
-    border-radius:0;
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,.45);
 }
 
 .ticket img{
     width:100%;
     height:100%;
-
     object-fit:cover;
-
     display:block;
 }
 
 /* =========================
-   全局文字层级
+   统一文字层
 ========================= */
 
 .actor,
@@ -89,27 +78,22 @@ body{
     z-index:99;
 }
 
+/* =========================================================
+   PC端坐标（基于 2160×815 设计稿）
+   = 原1920体系 × 1.125 已全部换算
+========================================================= */
+
 /* =========================
-   领衔出演
+   标题
 ========================= */
 
 .actor{
-
-    top:120px;
-    left:120px;
-
-    font-family:
-    "XiangCuiSong",
-    serif;
-
-    font-size:clamp(28px, 2vw, 54px);
-
+    top:135px;
+    left:135px;
+    font-family:"XiangCuiSong",serif;
+    font-size:56px;
     color:#fff;
-
     letter-spacing:2px;
-
-    text-shadow:
-    0 0px 0px rgba(0,0,0,.75);
 }
 
 /* =========================
@@ -117,20 +101,11 @@ body{
 ========================= */
 
 .time{
-
-    top:295px;
-    left:120px;
-
-    font-size:clamp(18px, 1.1vw, 30px);
-
+    top:332px;
+    left:135px;
+    font-size:30px;
     line-height:1.8;
-
     color:#fff;
-
-    font-weight:400;
-
-    text-shadow:
-    0 0px 0px rgba(0,0,0,.75);
 }
 
 /* =========================
@@ -138,48 +113,22 @@ body{
 ========================= */
 
 .hall{
-
-    top:412px;
-    left:120px;
-
-    font-size:clamp(20px, 1.2vw,36px);
-
+    top:465px;
+    left:135px;
+    font-size:36px;
     color:#fff;
-
-    letter-spacing:1px;
-
-    font-weight:400;
-
-    text-shadow:
-    0 0px 0px rgba(0,0,0,.7);
 }
 
 /* =========================
-   座位号
+   座位
 ========================= */
 
 .seat{
-
-    right:105px;
-    top:420px;
-
-    transform:translateY(-50%);
-
+    top:472px;
+    right:118px;
     text-align:right;
-
-    color:#ffffff;
-
-    font-weight:400;
-
-    font-size:clamp(26px, 2.3vw, 64px);
-
-    line-height:1.5;
-
-    letter-spacing:2px;
-
-    text-shadow:
-    0 0 0px rgba(0,0,0,.9),
-    0 0px 0px rgba(0,0,0,.9);
+    font-size:64px;
+    color:#fff;
 }
 
 /* =========================
@@ -187,20 +136,10 @@ body{
 ========================= */
 
 .order{
-
-    top:450px;
-    left:120px;
-
+    top:505px;
+    left:135px;
+    font-size:24px;
     color:#ddd;
-
-    font-size:clamp(14px, .9vw, 24px);
-
-    font-weight:400;
-
-    letter-spacing:1px;
-
-    text-shadow:
-    0 0px 0px rgba(0,0,0,.75);
 }
 
 /* =========================
@@ -208,189 +147,108 @@ body{
 ========================= */
 
 button{
-
     width:100%;
-
     margin-top:22px;
-
-    border:none;
-
-    border-radius:16px;
-
     padding:16px;
-
+    border:none;
+    border-radius:16px;
     background:#4b84c9;
-
     color:#000;
-
     font-size:18px;
-
-    font-family:
-    "Noto Sans SC",
-    sans-serif;
-
-    font-weight:400;
-
     cursor:pointer;
-
-    transition:.2s;
-}
-
-button:hover{
-    transform:translateY(-2px);
-}
-
-.tip{
-
-    margin-top:16px;
-
-    text-align:center;
-
-    color:#888;
-
-    font-size:14px;
-
-    font-weight:400;
 }
 
 /* =========================
-   手机竖屏适配（比例版）
+   手机竖屏适配（vw版）
+   基准：1080 × 2374
 ========================= */
 
 @media screen and (orientation:portrait){
 
     body{
-
         margin:0;
-
         padding:0;
-
         min-height:100vh;
-
         display:flex;
-
         justify-content:center;
-
         align-items:center;
-
         background:#000;
-
         overflow:hidden;
     }
 
     .wrapper{
-
         width:100vw;
-
-        min-height:100vh;
-
         display:flex;
-
         flex-direction:column;
-
         justify-content:center;
-
         align-items:center;
     }
 
+    /* =========================
+       票根：按1080宽度计算
+    ========================= */
+
     .ticket{
-
         width:100vw;
-
-        max-width:100vw;
-
-        aspect-ratio:1920 / 724;
-
+        aspect-ratio:2160 / 815;
         position:relative;
-
-        overflow:hidden;
     }
 
     /* =========================
-       标题
+       vw换算规则
+       1vw = 10.8px（基于1080）
+       原设计2160 → 手机缩小2倍
     ========================= */
 
+    /* 标题 */
     .actor{
-
-        top:6.25vw;
-        left:6.25vw;
-
-        font-size:2.8vw;
+        top:6.2vw;
+        left:6.2vw;
+        font-size:2.6vw;
     }
 
-    /* =========================
-       时间
-    ========================= */
-
+    /* 时间 */
     .time{
-
-        top:15.3vw;
-        left:6.25vw;
-
-        font-size:1.45vw;
-
+        top:15vw;
+        left:6.2vw;
+        font-size:1.4vw;
         line-height:1.7;
     }
 
-    /* =========================
-       放映厅
-    ========================= */
-
+    /* 放映厅 */
     .hall{
-
-        top:21.5vw;
-        left:6.25vw;
-
+        top:21vw;
+        left:6.2vw;
         font-size:1.6vw;
     }
 
-    /* =========================
-       座位号
-    ========================= */
-
+    /* 座位 */
     .seat{
-
-        top:21.8vw;
+        top:21.5vw;
         right:5.5vw;
-
-        transform:none;
-
         font-size:3vw;
-
-        line-height:1.4;
+        text-align:right;
+        transform:none;
     }
 
-    /* =========================
-       票号
-    ========================= */
-
+    /* 票号 */
     .order{
-
         top:23.5vw;
-        left:6.25vw;
-
-        font-size:1.15vw;
+        left:6.2vw;
+        font-size:1.1vw;
     }
 
-    /* =========================
-       按钮
-    ========================= */
-
+    /* 按钮 */
     button{
-
         width:92vw;
-
-        max-width:500px;
-
+        max-width:600px;
         margin-top:20px;
-
-        margin-bottom:24px;
-
+        margin-bottom:30px;
         font-size:15px;
-
         padding:14px;
     }
 }
+   
 </style>
 </head>
 
@@ -400,20 +258,9 @@ button:hover{
 
     <div class="ticket" id="ticket">
 
-        <!-- =========================
-             替换你的票根模板
-             尺寸：1920 × 724
-        ========================== -->
-
         <img src="图层 3.png">
 
-        <!-- 标题 -->
-
-        <div class="actor">
-            冰穗华&夏天y领衔出演
-        </div>
-
-        <!-- 时间 -->
+        <div class="actor">冰穗华&夏天y领衔出演</div>
 
         <div class="time">
             2026年5月20日 00:00<br>
@@ -421,92 +268,46 @@ button:hover{
             2026年5月21日 00:00
         </div>
 
-        <!-- 放映厅 -->
+        <div class="hall">青红放映厅</div>
 
-        <div class="hall">
-            青红放映厅
-        </div>
+        <div class="seat" id="seat"></div>
 
-        <!-- 座位 -->
-
-        <div class="seat" id="seat">
-        </div>
-
-        <!-- 票号 -->
-
-        <div class="order">
-            No.110120
-        </div>
+        <div class="order">No.110120</div>
 
     </div>
 
-    <button onclick="saveImage()">
-        保存票根图片
-    </button>
+    <button onclick="saveImage()">保存票根图片</button>
 
 </div>
-
-<!-- html2canvas -->
 
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
 <script>
 
-/* =========================
-   随机座位
-========================= */
-
 function randomSeat(){
 
-    const row =
-        Math.floor(Math.random() * 20) + 1;
-
-
-    const seat =
-        Math.floor(Math.random() * 20) + 1;
-
     return {
-        row,
-        seat
+        row: Math.floor(Math.random()*20)+1,
+        seat: Math.floor(Math.random()*20)+1
     };
 }
 
-/* =========================
-   自动生成
-========================= */
-
-const result = randomSeat();
+const r = randomSeat();
 
 document.getElementById("seat").innerHTML =
-`
-ROW ${result.row}<br>
-SEAT ${result.seat}
-`;
-
-/* =========================
-   保存图片
-========================= */
+`ROW ${r.row}<br>SEAT ${r.seat}`;
 
 function saveImage(){
 
-    html2canvas(
-        document.getElementById("ticket"),
-        {
-            useCORS:true,
-            scale:2
-        }
-    ).then(canvas => {
+    html2canvas(document.getElementById("ticket"),{
+        useCORS:true,
+        scale:2
+    }).then(canvas=>{
 
-        const link =
-            document.createElement("a");
-
-        link.download =
-            "ticket.png";
-
-        link.href =
-            canvas.toDataURL();
-
-        link.click();
+        const a = document.createElement("a");
+        a.download="ticket.png";
+        a.href=canvas.toDataURL();
+        a.click();
     });
 }
 
